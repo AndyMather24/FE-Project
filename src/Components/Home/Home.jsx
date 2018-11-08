@@ -11,7 +11,6 @@ class Home extends Component {
         return (
             <div className="homepage">
                 <section className="dashboard-section">
-
                 </section>
                 <article className="main-articles">
 
