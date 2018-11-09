@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as api from '../../api.js';
 import './Articles.css';
+import { Link } from '@reach/router';
 class Articles extends Component {
   state = {
     articles: []
@@ -15,7 +16,10 @@ class Articles extends Component {
                 {article.belongs_to === 'football' && <img src="https://source.unsplash.com/collection/2540303/125x125" alt="placeholder img" />}
                 {article.belongs_to === 'coding' && <img src="https://source.unsplash.com/collection/1129594/125x125" alt="placeholder img" />}
                 {article.belongs_to === 'cooking' && <img src="https://source.unsplash.com/collection/630995/125x125" alt="placeholder img" />}
-                <h6 className="title">{article.title}</h6>
+                <Link className="title" to={`/articles/${article._id}`}>
+                  {' '}
+                  <h6 className="title">{article.title}</h6>{' '}
+                </Link>
                 <p className="votes">Likes:{article.votes}</p>
                 <p className="comments">Comments: {article.comment_count}</p>
               </div>

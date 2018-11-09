@@ -4,6 +4,7 @@ import './App.css';
 import Home from './Components/Home/Home';
 import Header from './Components/Header/Header';
 import Articles from './Components/Articles/Articles';
+import Article from './Components/Article/Article';
 class App extends Component {
   render() {
     return (
@@ -11,10 +12,10 @@ class App extends Component {
         <header className="header-section">
           <Header />
         </header>
-
         <Router>
           <Home path="/" />
           <Articles path="/topics/:topic_slug/articles" />
+          <Article path="/articles/:article_id" />
         </Router>
       </div>
     );

@@ -16,16 +16,19 @@ img {
 
 .title {
   grid-area: title;
+  text-decoration: none;
 }
 .votes {
   font-size: 12px;
   grid-area: votes;
   text-align: center;
+  text-decoration: none;
 }
 
 .comments {
   font-size: 12px;
   grid-area: comments;
+  text-decoration: none;
 }
 
 .fade {

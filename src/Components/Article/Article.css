@@ -1,0 +1,19 @@
+article {
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+}
+article > * {
+  grid-column: 2;
+}
+img {
+  width: 100%;
+}
+
+article > figure {
+  grid-column: 1 / -1;
+  margin: 20px 0;
+}
+article > figure {
+  grid-column: 1 / -1;
+  margin: 20px 0;
+}
