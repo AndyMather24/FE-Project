@@ -3,7 +3,7 @@
 	display: grid;
 	grid-template-rows: 4fr 10fr;
 	grid-template-columns: 3fr 3fr 6fr;
-	grid-template-areas: "header-section header-section header-section" "dashboard-section dashboard-section main-articles";
+	grid-template-areas: "dashboard-section dashboard-section main-articles" "dashboard-section dashboard-section main-articles";
 }
 
 .header-section {

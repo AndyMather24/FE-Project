@@ -11,12 +11,11 @@
 .nav-links {
   text-decoration: none;
   color: white;
-  background: rgba(red, green, blue, 0.3);
 }
 
 .Coding {
   grid-area: Coding;
-  margin-top: 5px;
+  margin-top: 15px;
   padding: 40px;
   position: relative;
   display: flex;
@@ -24,12 +23,12 @@
   justify-content: flex-end;
   box-sizing: border-box;
   color: #fff;
-  background: url('https://source.unsplash.com/collection/827807/250x200');
+  background: url('https://source.unsplash.com/collection/1129594/250x200');
   background-repeat: no-repeat;
   background-position: center;
 }
 .Coding .Football .Cooking {
-  border-radius: 10%;
+  border-radius: 15%;
 }
 
 .Football {
@@ -42,7 +41,7 @@
   justify-content: flex-end;
   box-sizing: border-box;
   color: #fff;
-  background: url('https://source.unsplash.com/collection/630995/250x200');
+  background: url('https://source.unsplash.com/collection/2540303/250x200');
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -58,7 +57,7 @@
   justify-content: flex-end;
   box-sizing: border-box;
   color: #fff;
-  background: url('https://source.unsplash.com/collection/2540303/250x200');
+  background: url('https://source.unsplash.com/collection/630995/250x200');
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -68,6 +67,7 @@
   transition: opacity 0.25s ease-in-out;
   -moz-transition: opacity 0.25s ease-in-out;
   -webkit-transition: opacity 0.25s ease-in-out;
+  transform: scale(1.05);
 }
 
 .fade:hover {

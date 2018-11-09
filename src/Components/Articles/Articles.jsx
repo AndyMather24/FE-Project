@@ -12,7 +12,6 @@ class Articles extends Component {
           this.state.articles.map(article => {
             return (
               <div key={article._id} className="article-info-container fade">
-                {console.log(article.title)}
                 {article.belongs_to === 'football' && <img src="https://source.unsplash.com/collection/2540303/125x125" alt="placeholder img" />}
                 {article.belongs_to === 'coding' && <img src="https://source.unsplash.com/collection/1129594/125x125" alt="placeholder img" />}
                 {article.belongs_to === 'cooking' && <img src="https://source.unsplash.com/collection/630995/125x125" alt="placeholder img" />}
@@ -26,12 +25,19 @@ class Articles extends Component {
     );
   }
   componentDidMount = () => {
-    console.log('Mounting articles');
-    api.fetchArticles().then(articles => {
-      this.setState({
-        articles: articles
+    if (this.props.topic_slug) {
+      api.fetchArticlesByTopic(this.props.topic_slug).then(articles => {
+        this.setState({
+          articles: articles
+        });
       });
-    });
+    } else {
+      api.fetchArticles().then(articles => {
+        this.setState({
+          articles: articles
+        });
+      });
+    }
   };
 }
 

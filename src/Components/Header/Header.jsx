@@ -1,7 +1,7 @@
 import React from 'react';
 import './Header.css';
 import { Link } from '@reach/router';
-// import Navbar from '../Navbar/Navbar.jsx';
+import Navbar from '../Navbar/Navbar.jsx';
 const Header = (props) => {
     return (
         <div className="header-section">
@@ -9,12 +9,12 @@ const Header = (props) => {
                 {' '}
                 <Link className="home-link" to="/">
                     {' '}
-                    FakeNews{' '}
+                    ManyReads{' '}
                 </Link>
             </h1>
             <section className="login-section">Login details</section>
             <nav>
-                {/* <Navbar /> */}
+                <Navbar />
             </nav>
         </div>
     );
