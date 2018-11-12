@@ -5,9 +5,29 @@ article {
 article > * {
   grid-column: 2;
 }
-img {
+.article-img {
   width: 100%;
 }
+.user-info {
+  display: grid;
+  grid-template-columns: 1fr 2fr 4fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: ' . user-profile-picture username' ' . . date-published';
+}
+.user-profile-picture {
+  border: lightcoral solid 1px;
+  border-radius: 100%;
+  margin: auto;
+  grid-area: user-profile-picture;
+}
+
+.username {
+  grid-area: username;
+  font-family: 'Open Sans', sans-serif;
+}
+/* .date-published {
+  grid-area: date-published;
+} */
 
 article > figure {
   grid-column: 1 / -1;

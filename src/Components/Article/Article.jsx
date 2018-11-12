@@ -8,17 +8,18 @@ class Article extends Component {
   };
   render() {
     console.log(this.props);
-    const { title, body, comment_count, votes } = this.state.article;
+    const { title, body, comment_count, votes, created_at } = this.state.article;
     const { username, avatar_url } = this.state.author;
     return (
       <article>
         <figure>
-          <img src="https://source.unsplash.com/collection/1129594/1000x400" alt="placeholder img" />
+          <img className="article-image" src="https://source.unsplash.com/collection/1129594/1000x400" alt="placeholder img" />
         </figure>
         <h1>{title}</h1>
         <div className="user-info">
-          {/* <img size=''src={avatar_url} /> */}
-          <p>{username}</p>
+          <img className="user-profile-picture" src="https://source.unsplash.com/collection/895539/40x40" alt="user profile image" />
+          <p className="username"> Published by: {username}</p>
+          {/* <p className="date-published"> {created_at}</p> */}
         </div>
         <p>{body}</p>
         <div>
