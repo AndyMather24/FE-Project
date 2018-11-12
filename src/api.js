@@ -25,3 +25,9 @@ export const fetchArticleById = id => {
     return data;
   });
 };
+
+export const fetchCommentsById = id => {
+  return axios.get(`${baseUrl}articles/${id}/comments`).then(({ data }) => {
+    return data;
+  });
+};

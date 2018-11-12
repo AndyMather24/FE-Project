@@ -1,0 +1,26 @@
+.comment {
+  display: flex;
+}
+.comment-section {
+  list-style: none;
+  max-width: 800px;
+  width: 100%;
+  margin: 50px auto;
+  padding: 10px;
+}
+
+.info {
+  font-size: 0.5em;
+  margin: 2em;
+}
+.body {
+  font-size: 0.5em;
+  margin: 2em;
+  background: lightskyblue;
+  padding: 1em;
+  border-radius: 5%;
+}
+
+.avatar {
+  border-radius: 100%;
+}

@@ -10,9 +10,9 @@ article > * {
 }
 .user-info {
   display: grid;
-  grid-template-columns: 1fr 2fr 4fr;
+  grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: 1fr 1fr;
-  grid-template-areas: ' . user-profile-picture username' ' . . date-published';
+  grid-template-areas: ' . user-profile-picture .' ' . username date-published';
 }
 .user-profile-picture {
   border: lightcoral solid 1px;
@@ -24,10 +24,9 @@ article > * {
 .username {
   grid-area: username;
   font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  font-size: 0.5em;
 }
-/* .date-published {
-  grid-area: date-published;
-} */
 
 article > figure {
   grid-column: 1 / -1;

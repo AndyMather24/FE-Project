@@ -1,29 +1,30 @@
 import React, { Component } from 'react';
 import * as api from '../../api';
 import './Article.css';
+import Comments from '../Comments/Comments';
 class Article extends Component {
   state = {
     article: {},
     author: {}
   };
   render() {
-    console.log(this.props);
-    const { title, body, comment_count, votes, created_at } = this.state.article;
-    const { username, avatar_url } = this.state.author;
+    const { title, body } = this.state.article;
+    const { username } = this.state.author;
     return (
       <article>
         <figure>
-          <img className="article-image" src="https://source.unsplash.com/collection/1129594/1000x400" alt="placeholder img" />
+          <img className="article-image" src="https://source.unsplash.com/collection/1129594/1000x400" alt="article image" />
         </figure>
         <h1>{title}</h1>
-        <div className="user-info">
-          <img className="user-profile-picture" src="https://source.unsplash.com/collection/895539/40x40" alt="user profile image" />
-          <p className="username"> Published by: {username}</p>
-          {/* <p className="date-published"> {created_at}</p> */}
-        </div>
+
         <p>{body}</p>
+        <div className="user-info">
+          <img className="user-profile-picture" src="https://source.unsplash.com/collection/895539/70x70" alt="user profile" />
+          <p className="username"> Published by: {username}</p>
+        </div>
+
         <div>
-          <p>Scrimba is a platform for interactive coding screencast where you can run the code at any moment in time.</p>
+          <Comments article_id={this.props.article_id} />
         </div>
       </article>
     );
