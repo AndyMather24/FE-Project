@@ -3,7 +3,9 @@
   display: grid;
   grid-template-columns: 3fr 10fr;
   grid-template-rows: 4fr 2fr;
-  grid-template-areas: 'logo login-section' 'logo nav';
+  grid-template-areas:
+    'logo login-section'
+    'logo nav';
   border-bottom: 1px black solid;
 }
 
@@ -19,6 +21,7 @@
 
 .login-section {
   grid-area: login-section;
+  text-align: end;
 }
 nav {
   grid-area: nav;
