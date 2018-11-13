@@ -14,7 +14,7 @@ const Header = props => {
         </Link>
       </h1>
       <section className="login-section">
-        <Login setUser={props.setUser} user={props.user} />
+        <Login logOut={props.logOut} setUser={props.setUser} user={props.user} />
       </section>
       <nav>
         <Navbar />

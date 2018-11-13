@@ -10,19 +10,18 @@ class Login extends Component {
     const { open } = this.state;
     return (
       <div>
-        <button onClick={this.onOpenModal}>Log in</button>
+        {!this.props.user.username ? <button onClick={this.onOpenModal}>Log in</button> : <button onClick={this.logOutUser}>Log out</button>}
         <Modal open={open} onClose={this.onCloseModal} center>
           <h2>Sign in!</h2>
           <form onSubmit={this.handleSubmit}>
             Username: <input onChange={this.handleChange} type="text" name="username" value={this.state.username} />
-            {this.props.user === null && <p>Please enter a value username.</p>}
             <button> Login </button>
           </form>
         </Modal>
         {this.props.user.username && (
-          <Modal open={open} onClose={this.onCloseModal} center>
+          <Modal className="size" open={open} onClose={this.onCloseModal} center>
             <h2>Welcome {this.props.user.username}</h2>
-            <button> Start reading </button>
+            <button onClick={this.onCloseModal}> Start reading </button>
           </Modal>
         )}
       </div>
@@ -44,6 +43,9 @@ class Login extends Component {
   handleSubmit = e => {
     e.preventDefault();
     this.props.setUser(this.state.username);
+  };
+  logOutUser = () => {
+    this.props.logOut();
   };
 }
 export default Login;
