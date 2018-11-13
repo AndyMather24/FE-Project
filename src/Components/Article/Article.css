@@ -5,14 +5,15 @@ article {
 article > * {
   grid-column: 2;
 }
-.article-img {
-  width: 100%;
-}
+
 .user-info {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: 1fr 1fr;
-  grid-template-areas: ' . user-profile-picture .' ' . username date-published';
+  grid-template-areas: '. user-profile-picture .' ' votes-section username date-published';
+}
+.votes-section {
+  grid-area: votes-section;
 }
 .user-profile-picture {
   border: lightcoral solid 1px;
