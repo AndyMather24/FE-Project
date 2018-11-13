@@ -17,9 +17,9 @@ class App extends Component {
           <Header logOut={this.logOut} setUser={this.setUser} user={this.state.user} />
         </header>
         <Router>
-          <Home path="/" user={this.state.user} />
+          <Home path="/" />
           <Articles path="/topics/:topic_slug/articles" />
-          <Article path="/articles/:article_id" />
+          <Article path="/articles/:article_id" user={this.state.user} />
         </Router>
       </div>
     );

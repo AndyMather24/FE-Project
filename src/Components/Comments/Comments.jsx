@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import * as api from '../../api';
 import './Comments.css';
-import Comment from '../Comment/Comment';
+import Postcomment from '../Postcomment/Postcomment';
 class Comments extends Component {
   state = {
     comments: [],
@@ -22,7 +22,7 @@ class Comments extends Component {
         )}
         {!this.state.hidden && (
           <ul className="comment-section">
-            <Comment />
+            {this.props.user.username && <Postcomment />}
             {this.state.comments &&
               this.state.comments.map(comment => {
                 return (
