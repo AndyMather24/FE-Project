@@ -8,7 +8,12 @@ import Articles from './Components/Articles/Articles';
 import Article from './Components/Article/Article';
 class App extends Component {
   state = {
-    user: {}
+    user: {
+      _id: '5bd6f57bd5c8e378dda1c920',
+      avatar_url: 'https://www.tumbit.com/profile-image/4/original/mr-grumpy.jpg',
+      name: 'Paul Grump',
+      username: 'grumpy19'
+    }
   };
   render() {
     return (
@@ -26,6 +31,7 @@ class App extends Component {
   }
   setUser = user => {
     api.fetchUser(user).then(({ user }) => {
+      window.localStorage.setItem('user', JSON.stringify({ user }));
       this.setState({
         user: user
       });
@@ -35,6 +41,7 @@ class App extends Component {
     this.setState({
       user: {}
     });
+    window.localStorage.clear();
   };
 }
 

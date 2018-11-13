@@ -22,7 +22,6 @@ class Comments extends Component {
         )}
         {!this.state.hidden && (
           <ul className="comment-section">
-            {this.props.user.username && <Postcomment />}
             {this.state.comments &&
               this.state.comments.map(comment => {
                 return (
@@ -42,6 +41,7 @@ class Comments extends Component {
                   </li>
                 );
               })}
+            {this.props.user && <Postcomment article_id={this.props.article_id} user={this.props.user} />}
           </ul>
         )}
       </Fragment>
