@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import * as api from '../../api';
 import './Comments.css';
 import Postcomment from '../Postcomment/Postcomment';
+import Delete from '../Delete/Delete';
 class Comments extends Component {
   state = {
     comments: [],
@@ -24,6 +25,7 @@ class Comments extends Component {
           <ul className="comment-section">
             {this.state.comments &&
               this.state.comments.map(comment => {
+                console.log(comment);
                 return (
                   <li className="comment user-comment">
                     <div className="info">
@@ -38,6 +40,7 @@ class Comments extends Component {
                       title={comment.created_by.username}
                     />
                     <p className="body">{comment.body}</p>
+                    {comment.created_by._id === this.props.user._id && <Delete id={comment._id} />}
                   </li>
                 );
               })}

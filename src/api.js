@@ -48,3 +48,9 @@ export const postComment = (art, comment) => {
     return data;
   });
 };
+
+export const deleteComment = id => {
+  return axios.delete(`${baseUrl}comments/${id}`).then(res => {
+    return console.log(res);
+  });
+};
