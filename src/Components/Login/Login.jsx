@@ -20,7 +20,7 @@ class Login extends Component {
         </Modal>
         {this.props.user.username && (
           <Modal className="size" open={open} onClose={this.onCloseModal} center>
-            <h2>Welcome {this.props.user.username}</h2>
+            <h2>Welcome{this.props.user.username}</h2>
             <button onClick={this.onCloseModal}> Start reading </button>
           </Modal>
         )}

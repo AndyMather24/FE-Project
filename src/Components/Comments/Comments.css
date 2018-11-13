@@ -1,6 +1,9 @@
 .comment {
   display: flex;
 }
+.button-style {
+  margin-bottom: 10px;
+}
 .comment-section {
   list-style: none;
   max-width: 800px;

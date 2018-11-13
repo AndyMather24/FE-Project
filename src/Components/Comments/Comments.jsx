@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import * as api from '../../api';
 import './Comments.css';
+import Comment from '../Comment/Comment';
 class Comments extends Component {
   state = {
     comments: [],
@@ -9,12 +10,19 @@ class Comments extends Component {
   render() {
     return (
       <Fragment>
-        <button className="button-style" onClick={this.toggleComments}>
-          {' '}
-          See Comments
-        </button>
+        {this.state.hidden ? (
+          <button className="button-style" onClick={this.toggleComments}>
+            Show Comments
+          </button>
+        ) : (
+          <button className="button-style" onClick={this.toggleComments}>
+            {' '}
+            Hide Comments
+          </button>
+        )}
         {!this.state.hidden && (
           <ul className="comment-section">
+            <Comment />
             {this.state.comments &&
               this.state.comments.map(comment => {
                 return (
@@ -42,7 +50,6 @@ class Comments extends Component {
 
   componentDidMount = () => {
     api.fetchCommentsById(this.props.article_id).then(({ comments }) => {
-      console.log('set');
       this.setState({
         comments: comments
       });

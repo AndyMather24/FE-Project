@@ -15,7 +15,7 @@ class Home extends Component {
           <Dashboard topics={this.state.topics} />
         </section>
         <article className="main-articles">
-          <Articles />
+          <Articles user={this.props.user} />
         </article>
       </div>
     );

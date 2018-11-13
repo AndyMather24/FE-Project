@@ -36,3 +36,16 @@ export const fetchUser = username => {
     return data;
   });
 };
+
+export const addVote = (direction, id) => {
+  return axios.patch(`${baseUrl}articles/${id}/?vote=${direction}`).then(({ data }) => {
+    return data;
+  });
+};
+
+export const postComment = (art, comment) => {
+  console.log(typeof art);
+  return axios.post(`${baseUrl}/articles/${art}/comments`, comment).then(res => {
+    return console.log(res);
+  });
+};

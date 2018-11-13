@@ -33,7 +33,7 @@
 
 .Football {
   grid-area: Football;
-  margin-top: 5px;
+  margin-top: 15px;
   padding: 40px;
   position: relative;
   display: flex;
@@ -68,6 +68,7 @@
   -moz-transition: opacity 0.25s ease-in-out;
   -webkit-transition: opacity 0.25s ease-in-out;
   transform: scale(1.05);
+  margin: 10px;
 }
 
 .fade:hover {

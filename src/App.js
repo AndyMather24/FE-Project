@@ -14,10 +14,10 @@ class App extends Component {
     return (
       <div className="App">
         <header className="header-section">
-          <Header setUser={this.setUser} user={this.state.user} />
+          <Header logOut={this.logOut} setUser={this.setUser} user={this.state.user} />
         </header>
         <Router>
-          <Home path="/" />
+          <Home path="/" user={this.state.user} />
           <Articles path="/topics/:topic_slug/articles" />
           <Article path="/articles/:article_id" />
         </Router>
@@ -29,6 +29,11 @@ class App extends Component {
       this.setState({
         user: user
       });
+    });
+  };
+  logOut = () => {
+    this.setState({
+      user: {}
     });
   };
 }

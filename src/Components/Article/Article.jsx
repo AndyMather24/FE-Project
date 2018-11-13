@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as api from '../../api';
 import './Article.css';
-import Comments from '../Comments/Comments';
+import Postcomment from '../Comments/Comments';
 import Voting from '../Voting/Voting';
 class Article extends Component {
   state = {
@@ -27,7 +27,7 @@ class Article extends Component {
         </div>
 
         <div>
-          <Comments article_id={this.props.article_id} />
+          <Postcomment article_id={this.props.article_id} />
         </div>
       </article>
     );
