@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Router, Redirect } from '@reach/router';
+import { Router } from '@reach/router';
 import './App.css';
 import * as api from './api';
 import Home from './Components/Home/Home';
