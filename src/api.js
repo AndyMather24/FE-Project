@@ -55,7 +55,7 @@ export const deleteComment = id => {
   });
 };
 export const postArticle = (body, topic) => {
-  return axios.post(`${baseUrl}topics/${topic}/articles`, body).then(res => {
-    return console.log(res);
+  return axios.post(`${baseUrl}topics/${topic}/articles`, body).then(({ data }) => {
+    return data;
   });
 };

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './Postarticle.css';
+import { navigate } from '@reach/router';
 import * as api from '../../api';
 class Postarticle extends Component {
   state = {
     article: {}
   };
   render() {
-    console.log(this.props.topic);
     return (
       <div>
         <div class="Post-Art">
@@ -28,11 +28,9 @@ class Postarticle extends Component {
       </div>
     );
   }
-
   componentDidMount = () => {
     this.setState({
       article: {
-        ...this.state.article,
         created_by: this.props.user._id
       }
     });
@@ -44,6 +42,7 @@ class Postarticle extends Component {
       article: { ...this.state.article, [name]: value }
     });
   };
+
   handleChange = e => {
     const value = e.target.value;
     const name = e.target.name;
@@ -51,10 +50,17 @@ class Postarticle extends Component {
       article: { ...this.state.article, [name]: value }
     });
   };
+
   handleSubmit = e => {
     e.preventDefault();
-    api.postArticle(this.state.article, this.state.article.topic).then(res => {
-      return console.log(res);
+    const { title, body, created_by } = this.state.article;
+    const articleBody = {
+      title,
+      body,
+      created_by
+    };
+    return api.postArticle(articleBody, this.state.article.topic).then(data => {
+      navigate(`/articles/${data._id}`);
     });
   };
 }

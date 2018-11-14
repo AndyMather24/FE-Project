@@ -17,7 +17,7 @@ const Header = props => {
         <Login logOut={props.logOut} setUser={props.setUser} user={props.user} />
       </section>
       <nav>
-        <Navbar />
+        <Navbar user={props.user} />
       </nav>
     </div>
   );

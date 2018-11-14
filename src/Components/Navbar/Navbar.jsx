@@ -6,7 +6,7 @@ const Navbar = props => {
     <div>
       <nav className="header-navbar">
         {' '}
-        <Link className="article fade" to="/article/post-article">
+        <Link className="article fade" to={`/${props.user._id}/post-article`}>
           Create Article
         </Link>
         | My Articles
