@@ -25,7 +25,6 @@ class Comments extends Component {
           <ul className="comment-section">
             {this.state.comments &&
               this.state.comments.map(comment => {
-                console.log(comment);
                 return (
                   <li className="comment user-comment">
                     <div className="info">
@@ -44,7 +43,7 @@ class Comments extends Component {
                   </li>
                 );
               })}
-            {this.props.user && <Postcomment article_id={this.props.article_id} user={this.props.user} />}
+            {this.props.user && <Postcomment updateComment={this.updateComments} article_id={this.props.article_id} user={this.props.user} />}
           </ul>
         )}
       </Fragment>
@@ -52,12 +51,17 @@ class Comments extends Component {
   }
 
   componentDidMount = () => {
-    api.fetchCommentsById(this.props.article_id).then(({ comments }) => {
+    this.updateComments(this.props.article_id);
+  };
+
+  updateComments = id => {
+    return api.fetchCommentsById(id).then(({ comments }) => {
       this.setState({
         comments: comments
       });
     });
   };
+
   toggleComments = () => {
     this.setState({
       hidden: !this.state.hidden

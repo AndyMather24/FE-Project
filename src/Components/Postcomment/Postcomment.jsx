@@ -6,6 +6,7 @@ class Postcomment extends Component {
     comment: {}
   };
   render() {
+    console.log('rending');
     return (
       <li className="comment user-comment">
         <img className="avatar" src="https://source.unsplash.com/collection/895539/35x35" alt="Profile of user" />
@@ -13,7 +14,7 @@ class Postcomment extends Component {
           <button className="info" type="submit">
             Post
           </button>
-          <textarea onChange={this.handleChange} className="body" placeholder="Write your comment here" name="body" />
+          <textarea onChange={this.handleChange} className="body" placeholder="type your comment here" name="body" />
         </form>
       </li>
     );
@@ -25,9 +26,10 @@ class Postcomment extends Component {
   };
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.props.article_id, this.state.comment);
-    api.postComment(this.props.article_id, this.state.comment).then(res => {
-      return console.log(res);
+    return api.postComment(this.props.article_id, this.state.comment).then(res => {
+      if (res.status === 201) {
+        this.props.updateComment(this.props.article_id);
+      }
     });
   };
   handleChange = e => {
