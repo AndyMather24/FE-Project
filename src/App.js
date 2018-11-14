@@ -5,6 +5,7 @@ import * as api from './api';
 import Home from './Components/Home/Home';
 import Header from './Components/Header/Header';
 import Articles from './Components/Articles/Articles';
+import Postarticle from './Components/Postarticle/Postarticle';
 import Article from './Components/Article/Article';
 class App extends Component {
   state = {
@@ -25,6 +26,7 @@ class App extends Component {
           <Home path="/" />
           <Articles path="/topics/:topic_slug/articles" />
           <Article path="/articles/:article_id" user={this.state.user} />
+          <Postarticle user={this.state.user} path="/article/post-article" />
         </Router>
       </div>
     );

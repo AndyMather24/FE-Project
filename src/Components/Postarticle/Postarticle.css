@@ -1,0 +1,42 @@
+.Post-Art {
+  font: 95% Arial, Helvetica, sans-serif;
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 16px;
+  background: #f7f7f7;
+}
+.Post-Art h1 {
+  background: #43d1af;
+  padding: 20px 0;
+  font-size: 140%;
+  font-weight: 300;
+  text-align: center;
+  color: #fff;
+  margin: -16px -16px 16px -16px;
+}
+.Post-Art input[type='text'],
+.Post-Art input[type='date'],
+.Post-Art input[type='datetime'],
+.Post-Art input[type='email'],
+.Post-Art input[type='number'],
+.Post-Art input[type='search'],
+.Post-Art input[type='time'],
+.Post-Art input[type='url'],
+.Post-Art textarea,
+.Post-Art select {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  outline: none;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 100%;
+  background: #fff;
+  margin-bottom: 4%;
+  border: 1px solid #ccc;
+  padding: 3%;
+  color: #555;
+  font: 95% Arial, Helvetica, sans-serif;
+}
