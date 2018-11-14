@@ -26,7 +26,7 @@ class Comments extends Component {
             {this.state.comments &&
               this.state.comments.map(comment => {
                 return (
-                  <li className="comment user-comment">
+                  <li key="comment._id" className="comment user-comment">
                     <div className="info">
                       <p>{comment.created_by.username}</p>
                     </div>
@@ -38,8 +38,14 @@ class Comments extends Component {
                       alt="Profile Avatar"
                       title={comment.created_by.username}
                     />
-                    <p className="body">{comment.body}</p>
-                    {comment.created_by._id === this.props.user._id && <Delete id={comment._id} />}
+                    <div className="body">
+                      <p>{comment.body}</p>
+                      {/* <p>{comment.created_at}</p> */}
+                    </div>
+
+                    {comment.created_by._id === this.props.user._id && (
+                      <Delete updateComment={this.updateComments} article_id={this.props.article_id} id={comment._id} />
+                    )}
                   </li>
                 );
               })}
@@ -56,6 +62,10 @@ class Comments extends Component {
 
   updateComments = id => {
     return api.fetchCommentsById(id).then(({ comments }) => {
+      comments.map(comment => {
+        comment.created_at = new Date(comment.created_at);
+        return comments;
+      });
       this.setState({
         comments: comments
       });

@@ -6,7 +6,7 @@ const Delete = props => {
       <button
         onClick={e => {
           api.deleteComment(props.id).then(res => {
-            console.log(res);
+            if (res.status === 200) return props.updateComment(props.article_id);
           });
         }}
       >

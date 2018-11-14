@@ -51,6 +51,6 @@ export const postComment = (art, comment) => {
 
 export const deleteComment = id => {
   return axios.delete(`${baseUrl}comments/${id}`).then(res => {
-    return console.log(res);
+    return res;
   });
 };
