@@ -28,7 +28,7 @@ class Comments extends Component {
                 return (
                   <li key="comment._id" className="comment user-comment">
                     <div className="info">
-                      <p>{comment.created_by.username}</p>
+                      <p />
                     </div>
                     <img
                       className="avatar"
@@ -39,7 +39,9 @@ class Comments extends Component {
                       title={comment.created_by.username}
                     />
                     <div className="body">
-                      <p>{comment.body}</p>
+                      <p>
+                        {comment.created_by.username} Says "{comment.body}"
+                      </p>
                       {/* <p>{comment.created_at}</p> */}
                     </div>
 
