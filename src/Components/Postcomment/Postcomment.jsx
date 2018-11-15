@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as api from '../../api';
-import '../Comments/Comments.css';
+import '../Postcomment/Postcomment.css';
 class Postcomment extends Component {
   state = {
     comment: {}
@@ -8,13 +8,13 @@ class Postcomment extends Component {
   render() {
     console.log('rending');
     return (
-      <li className="comment user-comment">
-        <img className="avatar" src="https://source.unsplash.com/collection/895539/35x35" alt="Profile of user" />
-        <form onSubmit={this.handleSubmit}>
-          <button className="info" type="submit">
+      <li className="post-container">
+        <img className="user-photo" src="https://source.unsplash.com/collection/895539/35x35" alt="Profile of user" />
+        <form className="comment-body" onSubmit={this.handleSubmit}>
+          <textarea onChange={this.handleChange} className="comment-body" placeholder="type your comment here" name="body" />
+          <button className="button-post" type="submit">
             Post
           </button>
-          <textarea onChange={this.handleChange} className="body" placeholder="type your comment here" name="body" />
         </form>
       </li>
     );

@@ -1,0 +1,18 @@
+.post-container {
+  display: grid;
+  grid-template-columns: 2fr 6fr 2fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 'user-photo comment-body button-post';
+}
+.user-photo {
+  grid-area: user-photo;
+}
+.comment-body {
+  grid-area: comment-body;
+  width: 100%;
+  height: 100%;
+}
+
+.button-post {
+  grid-area: button-post;
+}
