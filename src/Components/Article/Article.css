@@ -1,17 +1,38 @@
-article {
+.article-container {
   display: grid;
+  height: 100vh;
+  width: 100%;
   grid-template-columns: 1fr 10fr 1fr;
+  grid-template-rows: 8fr 1fr 2fr 10fr 2fr 2fr;
+  grid-template-areas:
+    'article-img article-img article-img'
+    '. article-title .'
+    '. user-info .'
+    '. article-body .'
+    '. votes-section .'
+    '. comments .';
 }
-article > * {
-  grid-column: 2;
+
+.article-img {
+  margin-top: 1em;
+  grid-area: article-img;
+  height: 100%;
+}
+.article-img img {
+}
+
+.article-title {
+  grid-area: article-title;
 }
 
 .user-info {
+  grid-area: user-info;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-template-areas: '. user-profile-picture .' ' votes-section username date-published';
 }
+
 .votes-section {
   grid-area: votes-section;
 }
@@ -28,12 +49,9 @@ article > * {
   text-align: center;
   font-size: 0.5em;
 }
-
-article > figure {
-  grid-column: 1 / -1;
-  margin: 20px 0;
+.article-body {
+  grid-area: article-body;
 }
-article > figure {
-  grid-column: 1 / -1;
-  margin: 20px 0;
+.comments {
+  grid-area: comments;
 }
