@@ -3,6 +3,7 @@ import * as api from '../../api';
 import './Article.css';
 import Comments from '../Comments/Comments';
 import Voting from '../Voting/Voting';
+
 class Article extends Component {
   state = {
     article: {},
@@ -13,9 +14,9 @@ class Article extends Component {
     const { username } = this.state.author;
     return (
       <article className="article-container">
-        <div className="article-img">
-          <img src="https://source.unsplash.com/collection/1129594/1000x800" />
-        </div>
+        <figure className="article-img">
+          <img src="https://source.unsplash.com/collection/1129594/1000x400" />
+        </figure>
         <h1 className="article-title">{title}</h1>
 
         <p className="article-body">{body}</p>
