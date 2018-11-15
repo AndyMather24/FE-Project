@@ -15,7 +15,7 @@ class Article extends Component {
     return (
       <article className="article-container">
         <figure className="article-img">
-          <img src="https://source.unsplash.com/collection/1129594/1000x400" />
+          <img src="https://source.unsplash.com/collection/1129594/1000x400" alt="article-image" />
         </figure>
         <h1 className="article-title">{title}</h1>
 

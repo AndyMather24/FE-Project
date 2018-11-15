@@ -12,17 +12,18 @@ class Comments extends Component {
     return (
       <Fragment>
         {this.state.hidden ? (
-          <button className="button-style" onClick={this.toggleComments}>
+          <h6 className="button-style" onClick={this.toggleComments}>
             Show Comments
-          </button>
+          </h6>
         ) : (
-          <button className="button-style" onClick={this.toggleComments}>
+          <h6 className="button-style" onClick={this.toggleComments}>
             {' '}
             Hide Comments
-          </button>
+          </h6>
         )}
         {!this.state.hidden && (
           <ul className="comment-section">
+            <h4>Scroll for more...</h4>
             {this.state.comments &&
               this.state.comments.map(comment => {
                 return (
@@ -42,7 +43,6 @@ class Comments extends Component {
                       <p>
                         {comment.created_by.username} Says "{comment.body}"
                       </p>
-                      {/* <p>{comment.created_at}</p> */}
                     </div>
 
                     {comment.created_by._id === this.props.user._id && (

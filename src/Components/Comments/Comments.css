@@ -1,13 +1,15 @@
 .button-style {
   margin: 1em;
 }
+.button-style:hover {
+  text-decoration: underline;
+}
 .comment-section {
   list-style: none;
-  max-width: 800px;
   width: 100%;
   padding: 10px;
   overflow: scroll;
-  height: 12em;
+  height: 25em;
 }
 
 .info {

@@ -1,5 +1,6 @@
 .article-info-container {
   display: grid;
+
   grid-template-columns: 2fr 3fr 3fr;
   grid-template-rows: 2fr 2fr;
   grid-template-areas: 'img title title' 'img votes comments';
@@ -9,6 +10,7 @@
 }
 .articles-container {
   overflow: scroll;
+  height: 25em;
 }
 
 img {

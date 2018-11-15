@@ -11,7 +11,7 @@ class Postcomment extends Component {
       <li className="post-container">
         <img className="user-photo" src="https://source.unsplash.com/collection/895539/35x35" alt="Profile of user" />
         <form className="comment-body" onSubmit={this.handleSubmit}>
-          <textarea onChange={this.handleChange} className="comment-body" placeholder="type your comment here" name="body" />
+          <textarea value={this.state.comment.body} onChange={this.handleChange} className="comment-body" placeholder="type your comment here" name="body" />
           <button className="button-post" type="submit">
             Post
           </button>
@@ -29,6 +29,9 @@ class Postcomment extends Component {
     return api.postComment(this.props.article_id, this.state.comment).then(res => {
       if (res.status === 201) {
         this.props.updateComment(this.props.article_id);
+        this.setState({
+          comment: { body: '' }
+        });
       }
     });
   };

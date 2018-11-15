@@ -3,25 +3,17 @@
   max-width: 400px;
   margin: 10px auto;
   padding: 16px;
-  background: #f7f7f7;
+  background: #ffffff;
 }
 .Post-Art h1 {
-  background: #43d1af;
   padding: 20px 0;
   font-size: 140%;
   font-weight: 300;
   text-align: center;
-  color: #fff;
+  color: black;
   margin: -16px -16px 16px -16px;
 }
 .Post-Art input[type='text'],
-.Post-Art input[type='date'],
-.Post-Art input[type='datetime'],
-.Post-Art input[type='email'],
-.Post-Art input[type='number'],
-.Post-Art input[type='search'],
-.Post-Art input[type='time'],
-.Post-Art input[type='url'],
 .Post-Art textarea,
 .Post-Art select {
   -webkit-transition: all 0.3s ease-in-out;
