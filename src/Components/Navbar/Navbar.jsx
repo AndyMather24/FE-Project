@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from '@reach/router';
 import './Navbar.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 const Navbar = props => {
   return (
     <div>
       <nav className="header-navbar">
         {' '}
         <Link className="article link-style" to={`/${props.user._id}/post-article`}>
-          Create Article
+          Add Article <FontAwesomeIcon icon="plus-circle" />
         </Link>
       </nav>
     </div>

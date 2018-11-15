@@ -20,8 +20,8 @@ class Articles extends Component {
                   {' '}
                   <h6 className="title">{article.title}</h6>{' '}
                 </Link>
-                <p className="votes">Votes :{article.votes}</p>
-                <p className="comments">Comments: {article.comment_count}</p>
+                {/* <p className="votes">Votes :{article.votes}</p>
+                <p className="comments">Comments: {article.comment_count}</p> */}
               </div>
             );
           })}
@@ -36,11 +36,22 @@ class Articles extends Component {
         });
       });
     } else {
-      api.fetchArticles().then(articles => {
-        this.setState({
-          articles: articles
+      api
+        .fetchArticles()
+        .then(articles => {
+          this.setState({
+            articles: articles
+          });
+        })
+        .catch(error => {
+          this.props.navigate('/error', {
+            state: {
+              status: 404,
+              from: '/articles',
+              msg: 'No articles found'
+            }
+          });
         });
-      });
     }
   };
 }

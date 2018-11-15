@@ -15,6 +15,7 @@ class Login extends Component {
           <h2>Sign in!</h2>
           <form onSubmit={this.handleSubmit}>
             Username: <input onChange={this.handleChange} type="text" name="username" value={this.state.username} />
+            {this.props.error && <p>incorrect username</p>}
             <button> Login </button>
           </form>
         </Modal>

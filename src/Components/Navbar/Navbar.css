@@ -3,7 +3,5 @@
   color: black;
 }
 .link-style:hover {
-  background: rgba(0, 153, 204, 0.3);
-  color: white;
-  padding: 0.2em;
+  text-decoration: underline;
 }

@@ -10,6 +10,7 @@
   padding: 10px;
   overflow: scroll;
   height: 25em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .info {
@@ -22,8 +23,10 @@
   background: lightskyblue;
   padding: 1em;
   border-radius: 5%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .avatar {
   border-radius: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }

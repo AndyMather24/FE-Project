@@ -1,12 +1,12 @@
 .article-info-container {
   display: grid;
-
   grid-template-columns: 2fr 3fr 3fr;
-  grid-template-rows: 2fr 2fr;
-  grid-template-areas: 'img title title' 'img votes comments';
-  margin: 15px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid grey;
+  grid-template-rows: 1fr;
+  grid-template-areas: 'img title title';
+  /*  'img votes comments'; */
+  margin: 1.5em;
+  padding: 1em;
+  box-shadow: 0 7px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .articles-container {
   overflow: scroll;
@@ -20,12 +20,14 @@ img {
 }
 
 .title {
+  font-size: 1em;
   grid-area: title;
   text-decoration: none;
+  color: black;
   font-family: 'Open Sans', sans-serif;
 }
 .votes {
-  font-size: 12px;
+  font-size: 1em;
   grid-area: votes;
   text-align: center;
   text-decoration: none;
@@ -33,7 +35,7 @@ img {
 }
 
 .comments {
-  font-size: 12px;
+  font-size: 1em;
   grid-area: comments;
   text-decoration: none;
   font-family: 'Open Sans', sans-serif;
