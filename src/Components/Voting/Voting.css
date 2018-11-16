@@ -7,3 +7,8 @@ button {
 voter {
   margin: 20px;
 }
+
+.heart-icon {
+  color: crimson;
+  font-size: 2em;
+}

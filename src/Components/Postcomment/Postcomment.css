@@ -15,4 +15,5 @@
 
 .button-post {
   grid-area: button-post;
+  margin: 1em;
 }

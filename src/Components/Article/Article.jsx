@@ -26,7 +26,7 @@ class Article extends Component {
           <p className="username"> Published by: {username}</p>
         </div>
 
-        <div className="votes-section">{this.state.article.votes && <Voting article={this.state.article} />}</div>
+        <div className="votes-section">{this.state.article && <Voting article={this.state.article} />}</div>
 
         <div className="comments">
           <Comments user={this.props.user} article_id={this.props.article_id} />

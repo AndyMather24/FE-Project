@@ -20,8 +20,6 @@ class Articles extends Component {
                   {' '}
                   <h5 className="title">{article.title}</h5>{' '}
                 </Link>
-                {/* <p className="votes">Votes :{article.votes}</p>
-                <p className="comments">Comments: {article.comment_count}</p> */}
               </div>
             );
           })}

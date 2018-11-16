@@ -19,3 +19,18 @@
 .main-articles {
   grid-area: main-articles;
 }
+
+@media only screen and (max-width: 600px) {
+  .homepage {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dashboard-section {
+    display: flex;
+    flex-direction: column;
+    height: 8em;
+    width: 100%;
+    overflow: scroll;
+  }
+}

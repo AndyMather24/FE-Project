@@ -1,5 +1,6 @@
 .button-style {
-  margin: 1em;
+  margin: 0.5em;
+  font-size: 2em;
 }
 .button-style:hover {
   text-decoration: underline;

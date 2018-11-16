@@ -49,6 +49,7 @@
   font-size: 0.5em;
 }
 .article-body {
+  padding-top: 1em;
   grid-area: article-body;
   padding-bottom: 2em;
 }
