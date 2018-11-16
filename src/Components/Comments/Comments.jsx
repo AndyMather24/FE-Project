@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import * as api from '../../api';
 import './Comments.css';
 import Postcomment from '../Postcomment/Postcomment';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Delete from '../Delete/Delete';
 class Comments extends Component {
   state = {
@@ -12,14 +13,14 @@ class Comments extends Component {
     return (
       <Fragment>
         {this.state.hidden ? (
-          <h6 className="button-style" onClick={this.toggleComments}>
-            Show Comments
-          </h6>
+          <p className="button-style" onClick={this.toggleComments}>
+            <FontAwesomeIcon icon="comments" />
+          </p>
         ) : (
-          <h6 className="button-style" onClick={this.toggleComments}>
+          <p className="button-style" onClick={this.toggleComments}>
             {' '}
-            Hide Comments
-          </h6>
+            <FontAwesomeIcon icon="comments-slash" />
+          </p>
         )}
         {!this.state.hidden && (
           <ul className="comment-section">
@@ -31,14 +32,16 @@ class Comments extends Component {
                     <div className="info">
                       <p />
                     </div>
-                    <img
-                      className="avatar"
-                      src="https://source.unsplash.com/collection/895539/35x35"
-                      width="35"
-                      height="35"
-                      alt="Profile Avatar"
-                      title={comment.created_by.username}
-                    />
+
+                    {/* // <img
+                    //   className="avatar"
+                    //   src="this.state.comments.created_by.avatar_url"
+                    //   width="35"
+                    //   height="35"
+                    //   alt="Profile Avatar"
+                    //   title={comment.created_by.username}
+                    // /> */}
+
                     <div className="body">
                       <p>
                         {comment.created_by.username} Says "{comment.body}"
@@ -64,10 +67,6 @@ class Comments extends Component {
 
   updateComments = id => {
     return api.fetchCommentsById(id).then(({ comments }) => {
-      comments.map(comment => {
-        comment.created_at = new Date(comment.created_at);
-        return comments;
-      });
       this.setState({
         comments: comments
       });
