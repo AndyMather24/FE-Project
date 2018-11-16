@@ -10,10 +10,10 @@ import Articles from './Components/Articles/Articles';
 import Postarticle from './Components/Postarticle/Postarticle';
 import Article from './Components/Article/Article';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
+import { faPlusCircle, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import Loading from './Components/Loading/Loading';
 
-library.add(faPlusCircle);
+library.add(faPlusCircle, faTrashAlt);
 class App extends Component {
   state = {
     user: {},
