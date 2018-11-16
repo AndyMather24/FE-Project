@@ -13,9 +13,9 @@ class Articles extends Component {
           this.state.articles.map(article => {
             return (
               <div key={article._id} className="article-info-container">
-                {article.belongs_to === 'football' && <img src="https://source.unsplash.com/collection/2540303/125x125" alt="placeholder img" />}
-                {article.belongs_to === 'coding' && <img src="https://source.unsplash.com/collection/1129594/125x125" alt="placeholder img" />}
-                {article.belongs_to === 'cooking' && <img src="https://source.unsplash.com/collection/630995/125x125" alt="placeholder img" />}
+                {article.belongs_to === 'football' && <img src="https://source.unsplash.com/collection/2540303/125x125" alt="placeholder" />}
+                {article.belongs_to === 'coding' && <img src="https://source.unsplash.com/collection/1129594/125x125" alt="placeholder" />}
+                {article.belongs_to === 'cooking' && <img src="https://source.unsplash.com/collection/630995/125x125" alt="placeholder" />}
                 <Link className="title" to={`/articles/${article._id}`}>
                   {' '}
                   <h5 className="title">{article.title}</h5>{' '}
