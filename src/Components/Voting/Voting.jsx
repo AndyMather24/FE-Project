@@ -10,34 +10,31 @@ class Voting extends Component {
   render() {
     return (
       <div>
-        <p>
-          {this.state.totalVotes}
-          <FontAwesomeIcon className="heart-icon" icon="heart" /> {this.state.totalVotes}
-        </p>
-
-        <button onClick={this.handleVote} name="up" value="-1">
+        <span>
           {' '}
-          vote up {/* <FontAwesomeIcon icon="thumbs-up" />{' '} */}
-        </button>
-        <button onClick={this.handleVote} name="down" value="1">
-          {' '}
-          Vote Down {/* <FontAwesomeIcon icon="thumbs-down" />{' '} */}
-        </button>
+          <FontAwesomeIcon onClick={this.handleVoteUp} className="thumb-up" icon="thumbs-up" />
+          {'          '} {this.state.totalVotes} {'           '}
+          <FontAwesomeIcon onClick={this.handleVoteDown} className="thumb-down" icon="thumbs-down" />
+        </span>
       </div>
     );
   }
-  componentDidMount = () => {
+  componentDidMount = () => {};
+
+  handleVoteUp = e => {
     this.setState({
-      totalVotes: this.props.article.votes
+      totalVotes: this.state.totalVotes + 1
+    });
+    api.addVote('up', this.props.article._id).then(data => {
+      return data;
     });
   };
 
-  handleVote = e => {
-    let vote = +e.target.value;
+  handleVoteDown = e => {
     this.setState({
-      totalVotes: this.state.totalVotes - vote
+      totalVotes: this.state.totalVotes - 1
     });
-    api.addVote(e.target.name, this.props.article._id).then(data => {
+    api.addVote('down', this.props.article._id).then(data => {
       return data;
     });
   };
