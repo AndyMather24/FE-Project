@@ -1,6 +1,7 @@
 import Modal from 'react-responsive-modal';
 import React, { Component } from 'react';
 import '../Login/Login.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 class Login extends Component {
   state = {
     open: false,
@@ -10,7 +11,16 @@ class Login extends Component {
     const { open } = this.state;
     return (
       <div>
-        {!this.props.user.username ? <h6 onClick={this.onOpenModal}>Log in</h6> : <h6 onClick={this.logOutUser}>Log out</h6>}
+        {!this.props.user.username ? (
+          <h6 onClick={this.onOpenModal}>
+            <FontAwesomeIcon icon="sign-in-alt" />
+          </h6>
+        ) : (
+          <h6 onClick={this.logOutUser}>
+            {' '}
+            <FontAwesomeIcon icon="sign-out-alt" /> logout
+          </h6>
+        )}
         <Modal open={open} onClose={this.onCloseModal} center>
           <h2>Sign in!</h2>
           <form onSubmit={this.handleSubmit}>
