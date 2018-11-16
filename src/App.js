@@ -16,12 +16,7 @@ import Loading from './Components/Loading/Loading';
 library.add(faPlusCircle);
 class App extends Component {
   state = {
-    user: {
-      _id: '5bd6f57bd5c8e378dda1c920',
-      avatar_url: 'https://www.tumbit.com/profile-image/4/original/mr-grumpy.jpg',
-      name: 'Paul Grump',
-      username: 'grumpy19'
-    },
+    user: {},
     loading: true,
     error: null
   };
@@ -32,7 +27,7 @@ class App extends Component {
           <Header error={this.state.error} logOut={this.logOut} setUser={this.setUser} user={this.state.user} />
         </header>
         {this.state.loading && <Loading />}
-        <Router>
+        <Router primary={false}>
           <Home path="/" />
           <Error path="/error" />
           <Articles path="/topics/:topic_slug/articles" />
@@ -52,10 +47,19 @@ class App extends Component {
     api
       .fetchUser(user)
       .then(({ user }) => {
-        window.localStorage.setItem('user', JSON.stringify({ user }));
-        this.setState({
-          user: user
-        });
+        console.log(user);
+        if (user === null) {
+          this.setState({
+            user: {},
+            error: true
+          });
+        } else {
+          window.localStorage.setItem('user', JSON.stringify({ user }));
+          this.setState({
+            user: user,
+            error: false
+          });
+        }
       })
       .catch(error => {
         this.setState({
@@ -63,6 +67,7 @@ class App extends Component {
         });
       });
   };
+
   logOut = () => {
     this.setState({
       user: {}
