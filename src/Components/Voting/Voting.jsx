@@ -1,26 +1,36 @@
 import React, { Component } from 'react';
 import * as api from '../../api';
-
+import './Voting.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 class Voting extends Component {
   state = {
-    totalVotes: this.props.article.votes
+    totalVotes: 0
   };
 
   render() {
     return (
       <div>
-        <p>{this.state.totalVotes}</p>
+        <p>
+          {this.state.totalVotes}
+          <FontAwesomeIcon className="heart-icon" icon="heart" /> {this.state.totalVotes}
+        </p>
+
         <button onClick={this.handleVote} name="up" value="-1">
           {' '}
-          Vote Up{' '}
+          vote up {/* <FontAwesomeIcon icon="thumbs-up" />{' '} */}
         </button>
         <button onClick={this.handleVote} name="down" value="1">
           {' '}
-          Vote Down{' '}
+          Vote Down {/* <FontAwesomeIcon icon="thumbs-down" />{' '} */}
         </button>
       </div>
     );
   }
+  componentDidMount = () => {
+    this.setState({
+      totalVotes: this.props.article.votes
+    });
+  };
 
   handleVote = e => {
     let vote = +e.target.value;
