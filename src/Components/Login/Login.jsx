@@ -10,7 +10,7 @@ class Login extends Component {
     const { open } = this.state;
     return (
       <div>
-        {!this.props.user.username ? <button onClick={this.onOpenModal}>Log in</button> : <button onClick={this.logOutUser}>Log out</button>}
+        {!this.props.user.username ? <h6 onClick={this.onOpenModal}>Log in</h6> : <h6 onClick={this.logOutUser}>Log out</h6>}
         <Modal open={open} onClose={this.onCloseModal} center>
           <h2>Sign in!</h2>
           <form onSubmit={this.handleSubmit}>
