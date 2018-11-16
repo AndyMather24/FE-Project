@@ -1,5 +1,6 @@
 import React from 'react';
 import * as api from '../../api';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const Delete = props => {
   return (
     <div>
@@ -11,7 +12,7 @@ const Delete = props => {
         }}
       >
         {' '}
-        Delete{' '}
+        <FontAwesomeIcon icon="trash-alt" />{' '}
       </button>
     </div>
   );
