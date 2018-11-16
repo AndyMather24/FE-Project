@@ -18,7 +18,8 @@ class Login extends Component {
         ) : (
           <h6 onClick={this.logOutUser}>
             {' '}
-            <FontAwesomeIcon icon="sign-out-alt" /> logout
+            <FontAwesomeIcon icon="sign-out-alt" />
+            {''}logout
           </h6>
         )}
         <Modal open={open} onClose={this.onCloseModal} center>
