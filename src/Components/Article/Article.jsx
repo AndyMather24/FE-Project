@@ -14,9 +14,9 @@ class Article extends Component {
     const { username } = this.state.author;
     return (
       <article className="article-container">
-        <figure className="article-img">
-          <img src="https://source.unsplash.com/collection/1129594/1000x400" alt="article-image" />
-        </figure>
+        <div className="article-img">
+          <img src="https://source.unsplash.com/collection/1129594/1000x400" alt="article" />
+        </div>
         <h1 className="article-title">{title}</h1>
 
         <p className="article-body">{body}</p>
