@@ -3,17 +3,26 @@ import { Router } from '@reach/router';
 import Error from './Components/Error/Error';
 import './App.css';
 import * as api from './api';
-
 import Home from './Components/Home/Home';
 import Header from './Components/Header/Header';
 import Articles from './Components/Articles/Articles';
 import Postarticle from './Components/Postarticle/Postarticle';
 import Article from './Components/Article/Article';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faPlusCircle, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import {
+  faPlusCircle,
+  faHeart,
+  faTrashAlt,
+  faComments,
+  faCommentSlash,
+  faThumbsUp,
+  faThumbsDown,
+  faSignInAlt,
+  faSignOutAlt
+} from '@fortawesome/free-solid-svg-icons';
 import Loading from './Components/Loading/Loading';
 
-library.add(faPlusCircle, faTrashAlt);
+library.add(faPlusCircle, faTrashAlt, faComments, faCommentSlash, faHeart, faThumbsUp, faThumbsDown, faSignInAlt, faSignOutAlt);
 class App extends Component {
   state = {
     user: {},
@@ -47,7 +56,6 @@ class App extends Component {
     api
       .fetchUser(user)
       .then(({ user }) => {
-        console.log(user);
         if (user === null) {
           this.setState({
             user: {},
