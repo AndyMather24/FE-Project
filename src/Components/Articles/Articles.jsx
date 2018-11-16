@@ -18,7 +18,7 @@ class Articles extends Component {
                 {article.belongs_to === 'cooking' && <img src="https://source.unsplash.com/collection/630995/125x125" alt="placeholder img" />}
                 <Link className="title" to={`/articles/${article._id}`}>
                   {' '}
-                  <h7 className="title">{article.title}</h7>{' '}
+                  <h5 className="title">{article.title}</h5>{' '}
                 </Link>
                 {/* <p className="votes">Votes :{article.votes}</p>
                 <p className="comments">Comments: {article.comment_count}</p> */}

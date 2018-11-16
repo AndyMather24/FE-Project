@@ -15,13 +15,13 @@ class Login extends Component {
           <h2>Sign in!</h2>
           <form onSubmit={this.handleSubmit}>
             Username: <input onChange={this.handleChange} type="text" name="username" value={this.state.username} />
-            {this.props.error && <p>incorrect username</p>}
+            {this.props.error && <p>Thats not an existing Username.</p>}
             <button> Login </button>
           </form>
         </Modal>
         {this.props.user.username && (
           <Modal className="size" open={open} onClose={this.onCloseModal} center>
-            <h2>Welcome{this.props.user.username}</h2>
+            <h2>Welcome {this.props.user.username}</h2>
             <button onClick={this.onCloseModal}> Start reading </button>
           </Modal>
         )}

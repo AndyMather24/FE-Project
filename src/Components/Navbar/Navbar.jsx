@@ -8,9 +8,11 @@ const Navbar = props => {
     <div>
       <nav className="header-navbar">
         {' '}
-        <Link className="article link-style" to={`/${props.user._id}/post-article`}>
-          Add Article <FontAwesomeIcon icon="plus-circle" />
-        </Link>
+        {props.user._id && (
+          <Link className="article link-style" to={`/${props.user._id}/post-article`}>
+            Add Article <FontAwesomeIcon icon="plus-circle" />
+          </Link>
+        )}
       </nav>
     </div>
   );
