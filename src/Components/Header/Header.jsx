@@ -7,10 +7,8 @@ const Header = props => {
   return (
     <div className="header-section">
       <h1 className="logo">
-        {' '}
         <Link className="home-link" to="/">
-          {' '}
-          ManyReads{' '}
+          ManyReads
         </Link>
       </h1>
       <section className="login-section">

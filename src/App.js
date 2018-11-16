@@ -11,7 +11,7 @@ import Postarticle from './Components/Postarticle/Postarticle';
 import Article from './Components/Article/Article';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
-import Loading from './Components/Articles/Loading/Loading';
+import Loading from './Components/Loading/Loading';
 
 library.add(faPlusCircle);
 class App extends Component {
