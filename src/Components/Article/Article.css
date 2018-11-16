@@ -1,9 +1,8 @@
 .article-container {
   display: grid;
-  height: 100vh;
   width: 100%;
   grid-template-columns: 1fr 10fr 1fr;
-  grid-template-rows: 16fr 1fr 2fr 10fr 2fr 2fr;
+  grid-template-rows: 5fr 2fr 2fr auto auto auto;
   grid-template-areas:
     'article-img article-img article-img'
     '. article-title .'
@@ -13,12 +12,10 @@
     '. comments .';
 }
 
-article-img {
+.article-img {
   grid-area: article-img;
-  width: 100%;
-  height: 100%;
 }
-article-img img {
+.article-img img {
   width: 100%;
   height: 100%;
 }
@@ -39,10 +36,10 @@ article-img img {
   grid-area: votes-section;
 }
 .user-profile-picture {
-  border: lightcoral solid 1px;
   border-radius: 100%;
   margin: auto;
   grid-area: user-profile-picture;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .username {
@@ -53,6 +50,7 @@ article-img img {
 }
 .article-body {
   grid-area: article-body;
+  padding-bottom: 2em;
 }
 .comments {
   grid-area: comments;
