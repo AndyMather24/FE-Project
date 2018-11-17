@@ -15,7 +15,7 @@ class Article extends Component {
     return (
       <article className="article-container">
         <div className="article-img">
-          <img src="https://source.unsplash.com/collection/1129594/1000x400" alt="article" />
+          <img src="https://source.unsplash.com/collection/1129594/2000x400" alt="article" />
         </div>
         <h1 className="article-title">{title}</h1>
 
@@ -26,7 +26,7 @@ class Article extends Component {
           <p className="username"> Published by: {username}</p>
         </div>
 
-        <div className="votes-section">{this.state.article && <Voting article={this.state.article} />}</div>
+        <div className="votes-section">{this.state.article._id && <Voting article={this.state.article} />}</div>
 
         <div className="comments">
           <Comments user={this.props.user} article_id={this.props.article_id} />
