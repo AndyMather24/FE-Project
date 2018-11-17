@@ -28,7 +28,7 @@ class Comments extends Component {
             {this.state.comments &&
               this.state.comments.map(comment => {
                 return (
-                  <li key="comment._id" className="comment user-comment">
+                  <li key={comment._id} className="comment user-comment">
                     <div className="info">
                       <p />
                     </div>
