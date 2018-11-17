@@ -12,8 +12,8 @@ class Postarticle extends Component {
         <div class="Post-Art">
           <h1>Create Article</h1>
           <form onSubmit={this.handleSubmit}>
-            <input type="text" name="title" placeholder="Article title" onChange={this.handleChange} />
-            <select defaultValue="" name="topic" onChange={this.handleSelect}>
+            <input type="text" name="title" placeholder="Article title" onChange={this.handleChange} required />
+            <select defaultValue="" name="topic" onChange={this.handleSelect} required>
               <option value="" selected disabled hidden>
                 Select a topic
               </option>
@@ -21,7 +21,7 @@ class Postarticle extends Component {
               <option value="football">Football</option>
               <option value="cooking">Cooking</option>
             </select>
-            <textarea name="body" placeholder="Enter Article here" onChange={this.handleChange} />
+            <textarea name="body" placeholder="Enter Article here" onChange={this.handleChange} required />
             <button type="submit">Post</button>
           </form>
         </div>
