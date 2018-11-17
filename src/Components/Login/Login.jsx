@@ -14,6 +14,7 @@ class Login extends Component {
         {!this.props.user.username ? (
           <h6 onClick={this.onOpenModal}>
             <FontAwesomeIcon icon="sign-in-alt" />
+            {''} Log in
           </h6>
         ) : (
           <h6 onClick={this.logOutUser}>
