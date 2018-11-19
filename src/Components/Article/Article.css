@@ -3,20 +3,22 @@
   display: grid;
   width: 100%;
   grid-template-columns: 1fr 10fr 1fr;
-  grid-template-rows: 6fr 2fr 2fr auto auto auto;
+  grid-template-rows: 5fr 2fr 2fr auto auto auto;
   grid-template-areas:
     'article-img article-img article-img'
     '. article-title .'
     '. user-info .'
     '. article-body .'
-    '. votes-section .'
-    '. comments .';
+    '. votes-comment-section .'
+    '. comments-section .';
 }
 
 .article-img {
   grid-area: article-img;
+  overflow: hidden;
 }
 .article-img img {
+  object-fit: cover;
   width: 100%;
   height: 100%;
 }
@@ -33,8 +35,8 @@
   grid-template-areas: '. user-profile-picture .' ' votes-section username date-published';
 }
 
-.votes-section {
-  grid-area: votes-section;
+.votes-comment-section {
+  grid-area: votes-comment-section;
 }
 .user-profile-picture {
   border-radius: 100%;
@@ -53,6 +55,11 @@
   padding-top: 1em;
   grid-area: article-body;
   padding-bottom: 2em;
+}
+.comments-section {
+  grid-area: comments-section;
+  overflow: scroll;
+  height: 25em;
 }
 .comments {
   grid-area: comments;

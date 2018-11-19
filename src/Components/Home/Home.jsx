@@ -28,7 +28,7 @@ class Home extends Component {
   setTopics = () => {
     api.fetchTopics().then(topics => {
       this.setState({
-        topics: topics
+        topics
       });
     });
   };

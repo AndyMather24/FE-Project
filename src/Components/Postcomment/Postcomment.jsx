@@ -28,7 +28,7 @@ class Postcomment extends Component {
   }
   componentDidMount = () => {
     this.setState({
-      comment: { ...this.state.comment, created_by: this.props.user._id }
+      comment: { created_by: this.props.user._id }
     });
   };
   handleSubmit = e => {

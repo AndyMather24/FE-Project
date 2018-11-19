@@ -18,6 +18,12 @@ class Voting extends Component {
     );
   }
 
+  componentDidMount = () => {
+    this.setState({
+      totalVotes: this.props.article.votes
+    });
+  };
+
   handleVoteUp = e => {
     this.setState({
       totalVotes: this.state.totalVotes + 1

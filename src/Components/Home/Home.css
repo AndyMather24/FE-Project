@@ -9,9 +9,6 @@
     'dashboard-section dashboard-section main-articles';
 }
 
-.header-section {
-  grid-area: header-section;
-}
 .dashboard-section {
   grid-area: dashboard-section;
 }
@@ -28,9 +25,8 @@
 
   .dashboard-section {
     display: flex;
-    flex-direction: column;
-    height: 8em;
+    flex-direction: row;
+    height: 30em;
     width: 100%;
-    overflow: scroll;
   }
 }

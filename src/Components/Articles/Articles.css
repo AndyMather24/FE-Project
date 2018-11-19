@@ -1,10 +1,13 @@
 .article-info-container {
   display: grid;
   grid-template-columns: 2fr 3fr 3fr;
-  grid-template-rows: 1fr;
-  grid-template-areas: 'img title title';
-  /*  'img votes comments'; */
-  margin: 1.5em;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    'img title title'
+    'img votes comments';
+  margin-left: 1em;
+  margin-top: 1em;
+  margin-right: 1em;
   padding: 1em;
   box-shadow: 0 7px 8px 0 rgba(0, 0, 0, 0.2);
 }
@@ -20,6 +23,7 @@ img {
 }
 
 .title {
+  padding-left: 0.2em;
   font-size: 1em;
   grid-area: title;
   text-decoration: none;
@@ -32,6 +36,9 @@ img {
   text-align: center;
   text-decoration: none;
   font-family: 'Open Sans', sans-serif;
+}
+.heart {
+  color: red;
 }
 
 .comments {

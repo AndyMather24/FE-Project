@@ -38,7 +38,7 @@ class Articles extends Component {
     if (this.props.topic_slug) {
       api.fetchArticlesByTopic(this.props.topic_slug).then(articles => {
         this.setState({
-          articles: articles
+          articles
         });
       });
     } else {
@@ -46,7 +46,7 @@ class Articles extends Component {
         .fetchArticles()
         .then(articles => {
           this.setState({
-            articles: articles
+            articles
           });
         })
         .catch(error => {

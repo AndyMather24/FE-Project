@@ -1,14 +1,23 @@
-button {
-  background: none;
-  color: inherit;
-  border: none;
+.votes-comment-section {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  text-align: center;
 }
 
-voter {
-  margin: 20px;
+.total-votes {
+  text-align: start;
+  padding-left: 2em;
+  padding-right: 2em;
 }
 
-.heart-icon {
-  color: crimson;
-  font-size: 2em;
+.thumb-up {
+  color: green;
+  font-size: 1.5em;
+  text-align: center;
+}
+.thumb-down {
+  font-size: 1.5em;
+  text-align: center;
 }

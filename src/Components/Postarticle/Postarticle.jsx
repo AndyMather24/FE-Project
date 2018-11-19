@@ -9,7 +9,7 @@ class Postarticle extends Component {
   render() {
     return (
       <div>
-        <div class="Post-Art">
+        <div className="Post-Art">
           <h1>Create Article</h1>
           <form onSubmit={this.handleSubmit}>
             <input type="text" name="title" placeholder="Article title" onChange={this.handleChange} required />

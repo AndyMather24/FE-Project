@@ -1,9 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import * as api from '../../api';
 import './Comments.css';
+import '../Voting/Voting.css';
+import '../Article/Article.css';
 import Postcomment from '../Postcomment/Postcomment';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Delete from '../Delete/Delete';
+
 class Comments extends Component {
   state = {
     comments: [],
@@ -13,49 +16,48 @@ class Comments extends Component {
     return (
       <Fragment>
         {this.state.hidden ? (
-          <p className="button-style" onClick={this.toggleComments}>
-            <FontAwesomeIcon icon="comments" />
+          <p onClick={this.toggleComments}>
+            {this.props.comment_count} show Comments <FontAwesomeIcon className="comments-icon" icon="comments" />
           </p>
         ) : (
-          <p className="button-style" onClick={this.toggleComments}>
+          <p onClick={this.toggleComments}>
             {' '}
-            <FontAwesomeIcon icon="comments-slash" />
+            Hide Comments <FontAwesomeIcon className="comments-icon" icon="comment-slash" />
           </p>
         )}
+
         {!this.state.hidden && (
-          <ul className="comment-section">
+          <div>
             <h4>Scroll for more...</h4>
             {this.state.comments &&
               this.state.comments.map(comment => {
                 return (
-                  <li key={comment._id} className="comment user-comment">
-                    <div className="info">
-                      <p />
+                  <div key={comment._id} className="comment-box">
+                    <div className="user-info-comments">
+                      <p className="username-comment">{comment.created_by.username} Says...</p>
+                      {/* <img
+                        className="user-img-comment"
+                        src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2edd8416489cbfa510d9a3eed50ecb5e&auto=format&fit=crop&w=500&q=60"
+                        width="55"
+                        height="55"
+                        alt="Profile Avatar"
+                        title={comment.created_by.username}
+                      /> */}
                     </div>
-
-                    {/* // <img
-                    //   className="avatar"
-                    //   src="this.state.comments.created_by.avatar_url"
-                    //   width="35"
-                    //   height="35"
-                    //   alt="Profile Avatar"
-                    //   title={comment.created_by.username}
-                    // /> */}
-
-                    <div className="body">
-                      <p>
-                        {comment.created_by.username} Says "{comment.body}"
-                      </p>
+                    <div className="comment-text">
+                      <p>"{comment.body}"</p>
                     </div>
-
-                    {comment.created_by._id === this.props.user._id && (
-                      <Delete updateComment={this.updateComments} article_id={this.props.article_id} id={comment._id} />
-                    )}
-                  </li>
+                    <div className="delete-bin">
+                      {comment.created_by._id === this.props.user._id && (
+                        <Delete updateComment={this.updateComments} article_id={this.props.article_id} id={comment._id} />
+                      )}
+                      <div />
+                    </div>
+                  </div>
                 );
               })}
-            {this.props.user && <Postcomment updateComment={this.updateComments} article_id={this.props.article_id} user={this.props.user} />}
-          </ul>
+            <Postcomment updateComment={this.updateComments} article_id={this.props.article_id} user={this.props.user} />
+          </div>
         )}
       </Fragment>
     );
@@ -68,7 +70,7 @@ class Comments extends Component {
   updateComments = id => {
     return api.fetchCommentsById(id).then(({ comments }) => {
       this.setState({
-        comments: comments
+        comments
       });
     });
   };
