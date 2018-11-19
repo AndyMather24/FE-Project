@@ -9,14 +9,11 @@ class Login extends Component {
   };
   render() {
     const { open } = this.state;
+
     return (
       <div>
-        {!this.props.user.username ? (
-          <h6 onClick={this.onOpenModal}>
-            <FontAwesomeIcon icon="sign-in-alt" />
-            {''} Log in
-          </h6>
-        ) : (
+        {!this.props.user.username && !this.state.open && this.onOpenModal()}
+        {this.props.user.username && (
           <h6 onClick={this.logOutUser}>
             {' '}
             <FontAwesomeIcon icon="sign-out-alt" />
@@ -32,7 +29,7 @@ class Login extends Component {
           </form>
         </Modal>
         {this.props.user.username && (
-          <Modal className="size" open={open} onClose={this.onCloseModal} center>
+          <Modal open={open} onClose={this.onCloseModal} center>
             <h2>Welcome {this.props.user.username}</h2>
             <button onClick={this.onCloseModal}> Start reading </button>
           </Modal>
