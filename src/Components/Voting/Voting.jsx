@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as api from '../../api';
 import './Voting.css';
+import '../Article/Article.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 class Voting extends Component {
   state = {
@@ -9,17 +10,13 @@ class Voting extends Component {
 
   render() {
     return (
-      <div>
-        <span>
-          {' '}
-          <FontAwesomeIcon onClick={this.handleVoteUp} className="thumb-up" icon="thumbs-up" />
-          {'          '} {this.state.totalVotes} {'           '}
-          <FontAwesomeIcon onClick={this.handleVoteDown} className="thumb-down" icon="thumbs-down" />
-        </span>
+      <div className="votes-comment-section">
+        <FontAwesomeIcon className="thumb-up" onClick={this.handleVoteUp} icon="thumbs-up" />
+        <span className="total-votes"> {this.state.totalVotes} </span>
+        <FontAwesomeIcon className="thumb-down" onClick={this.handleVoteDown} icon="thumbs-down" />
       </div>
     );
   }
-  componentDidMount = () => {};
 
   handleVoteUp = e => {
     this.setState({
