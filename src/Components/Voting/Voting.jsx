@@ -12,7 +12,7 @@ class Voting extends Component {
     return (
       <div className="votes-comment-section">
         <FontAwesomeIcon className="thumb-up" onClick={this.handleVoteUp} icon="thumbs-up" />
-        <span className="total-votes"> {this.state.totalVotes} </span>
+        <span className="total-votes"> {this.state.totalVotes} <FontAwesomeIcon className="heart" icon="heart" /> </span>
         <FontAwesomeIcon className="thumb-down" onClick={this.handleVoteDown} icon="thumbs-down" />
       </div>
     );
