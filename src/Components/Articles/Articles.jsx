@@ -23,14 +23,17 @@ class Articles extends Component {
               {article.belongs_to === 'cooking' && <img src="https://source.unsplash.com/collection/630995/125x125" alt="placeholder" />}
               <Link className="title" to={`/articles/${article._id}`}>
                 {' '}
-                <h5 className="title">{article.title}</h5>
-                <p>{article.body}</p>
+                <h5 >{article.title}</h5>
               </Link>
+              <p className="article-body" >{article.body}</p>
               <p className="votes">
                 <Voting article={article} />
               </p>
               <p className="comments">
-                {article.comment_count} <FontAwesomeIcon className="comments" icon="comments" />{' '}
+                <Link to={`/articles/${article._id}`}>
+                  {article.comment_count} <FontAwesomeIcon className="comments" icon="comments" />{' '}
+                </Link>
+
               </p>
             </div>
           );
@@ -59,8 +62,6 @@ class Articles extends Component {
           this.props.navigate('/error')
         });
     }
-
-
   }
 }
 export default Articles;
