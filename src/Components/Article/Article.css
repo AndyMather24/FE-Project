@@ -25,6 +25,7 @@
 
 .article-title {
   grid-area: article-title;
+  font-size: 2em;
 }
 
 .user-info {
@@ -52,9 +53,10 @@
   font-size: 0.5em;
 }
 .article-body {
-  padding-top: 1em;
+  padding-top: 0.2em;
   grid-area: article-body;
-  padding-bottom: 2em;
+  font-size: 1em;
+  padding-bottom: 0.3em;
 }
 .comments-section {
   grid-area: comments-section;
