@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as api from '../../api.js';
 import './Articles.css';
+import Voting from '../Voting/Voting'
 import Loading from '../Loading/Loading.jsx';
 import { Link } from '@reach/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -26,7 +27,7 @@ class Articles extends Component {
                 <p>{article.body}</p>
               </Link>
               <p className="votes">
-                {article.votes} <FontAwesomeIcon className="heart" icon="heart" />{' '}
+                <Voting article={article} />
               </p>
               <p className="comments">
                 {article.comment_count} <FontAwesomeIcon className="comments" icon="comments" />{' '}
