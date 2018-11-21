@@ -26,7 +26,6 @@
   .dashboard-section {
     display: flex;
     flex-direction: row;
-    height: 30em;
     width: 100%;
   }
 }

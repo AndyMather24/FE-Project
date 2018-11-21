@@ -1,21 +1,23 @@
 .comment-section {
   list-style: none;
-  width: 100%;
-  padding: 10px;
-  overflow: scroll;
+  width: 100vh;
+  padding: 0.1em;
+  overflow-y: scroll;
   height: 25em;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .comment-box {
   display: grid;
-  width: 100%;
+  width: auto;
+  height:auto;
   grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: auto auto;
   grid-template-areas: 'user-info . delete-bin' 'comment-text comment-text vote-info';
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border: solid lightblue 0.2em;
   margin-bottom: 1em;
+
 }
 
 .user-info-comments {

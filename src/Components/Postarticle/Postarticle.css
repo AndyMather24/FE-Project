@@ -1,6 +1,6 @@
 .Post-Art {
   font: 95% Arial, Helvetica, sans-serif;
-  max-width: 400px;
+  width: auto;
   margin: 10px auto;
   padding: 16px;
 
@@ -32,4 +32,12 @@
   padding: 3%;
   color: #555;
   font: 95% Arial, Helvetica, sans-serif;
+}
+.Post-Art textarea {
+  height: 5em;
+}
+@media only screen and (max-width: 600px) {
+  .Post-Art {
+    height: 100%;
+  }
 }
