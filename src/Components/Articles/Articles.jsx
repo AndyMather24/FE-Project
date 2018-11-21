@@ -4,9 +4,11 @@ import './Articles.css';
 import Loading from '../Loading/Loading.jsx';
 import { Link } from '@reach/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 class Articles extends Component {
   state = {
-    articles: []
+    articles: [],
+
   };
   render() {
     return (
@@ -20,7 +22,8 @@ class Articles extends Component {
               {article.belongs_to === 'cooking' && <img src="https://source.unsplash.com/collection/630995/125x125" alt="placeholder" />}
               <Link className="title" to={`/articles/${article._id}`}>
                 {' '}
-                <h5 className="title">{article.title}</h5>{' '}
+                <h5 className="title">{article.title}</h5>
+                <p>{article.body}</p>
               </Link>
               <p className="votes">
                 {article.votes} <FontAwesomeIcon className="heart" icon="heart" />{' '}
@@ -37,9 +40,12 @@ class Articles extends Component {
   componentDidMount = () => {
     if (this.props.topic_slug) {
       api.fetchArticlesByTopic(this.props.topic_slug).then(articles => {
+        console.log(articles)
         this.setState({
           articles
         });
+      }).catch(error => {
+        this.props.navigate('/error')
       });
     } else {
       api
@@ -48,18 +54,12 @@ class Articles extends Component {
           this.setState({
             articles
           });
-        })
-        .catch(error => {
-          this.props.navigate('/error', {
-            state: {
-              status: 404,
-              from: '/articles',
-              msg: 'No articles found'
-            }
-          });
+        }).catch(error => {
+          this.props.navigate('/error')
         });
     }
-  };
-}
 
+
+  }
+}
 export default Articles;
