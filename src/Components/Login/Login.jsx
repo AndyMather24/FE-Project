@@ -23,7 +23,7 @@ class Login extends Component {
         <Modal open={open} onClose={this.onCloseModal} center>
           <h2>Sign in!</h2>
           <form onSubmit={this.handleSubmit}>
-            Username: <input onChange={this.handleChange} type="text" name="username" value={this.state.username} />
+            Username: <input onChange={this.handleChange} type="text" name="username" placeholder="use 'grumpy19' to log in" value={this.state.username} />
             {this.props.error && <p>Thats not an existing Username.</p>}
             <button> Login </button>
           </form>
