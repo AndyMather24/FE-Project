@@ -6,14 +6,17 @@
   height: 25em;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-
+.username-comment {
+margin-left: 1em;
+padding-left: 1em;
+}
 .comment-box {
   display: grid;
   width: auto;
   height:auto;
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: auto auto;
-  grid-template-areas: 'user-info . delete-bin' 'comment-text comment-text vote-info';
+  grid-template-areas: 'user-info user-info delete-bin' 'comment-text comment-text comment-text';
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border: solid lightblue 0.2em;
   margin-bottom: 1em;
@@ -25,26 +28,25 @@
   width: auto;
   grid-area: user-info;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 2fr auto;
   grid-template-rows: 1fr;
-  grid-template-areas: 'username-comment user-img-comment';
+  grid-template-areas: 'user-img-comment username-comment';
 }
 
-/* .user-img-comment {
+.user-img-comment {
   grid-area: user-img-comment;
   object-fit: cover;
   border-radius: 100%;
   position: relative;
-  padding-top: 1em;
-} */
+  padding: 1em;
+}
 .delete-bin {
   grid-area: delete-bin;
 }
 .comment-text {
   font-size: 1em;
   grid-area: comment-text;
-  padding-left: 1em;
-  padding-top: 0.1em;
+  padding: 1em;
 }
 
 .heart {
