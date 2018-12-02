@@ -31,7 +31,7 @@ class Article extends Component {
               src="https://images.unsplash.com/photo-1535324492437-d8dea70a38a7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5020948430163a1dccb8aa26070664c4&auto=format&fit=crop&w=687&q=80"
               alt={username}
             />
-            <p className="username"> Published by: {username}</p>
+            <p className="username"> Written By: {username}</p>
           </div>
 
           <div className="votes-comment-section">{this.state.article._id && <Voting article={this.state.article} />}</div>
