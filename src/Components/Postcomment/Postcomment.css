@@ -1,12 +1,18 @@
 .post-container {
   display: grid;
   width: 100%;
-  grid-template-columns: auto 6fr auto;
+  grid-template-columns: auto auto auto;
   grid-template-rows: 1fr;
   grid-template-areas: 'user-photo comment-body comment-body';
 }
 .user-photo {
   grid-area: user-photo;
+  height: 3.5em;
+  width: 3.5em;
+  object-fit: cover;
+  border-radius: 100%;
+  position: relative;
+  padding: 1em;
 }
 .comment-body {
   grid-area: comment-body;

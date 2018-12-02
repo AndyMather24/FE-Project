@@ -9,7 +9,7 @@ class Postcomment extends Component {
     console.log('rending');
     return (
       <li className="post-container">
-        <img className="user-photo" src="https://source.unsplash.com/collection/895539/35x35" alt="Profile of user" />
+        <img className="user-photo" src={this.props.user.avatar_url} alt="user profile" />
         <form className="comment-body" onSubmit={this.handleSubmit}>
           <textarea
             value={this.state.comment.body}
