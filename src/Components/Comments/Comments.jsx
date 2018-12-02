@@ -20,11 +20,11 @@ class Comments extends Component {
             {this.props.comment_count} show Comments <FontAwesomeIcon className="comments-icon" icon="comments" />
           </p>
         ) : (
-          <p onClick={this.toggleComments}>
-            {' '}
-            Hide Comments <FontAwesomeIcon className="comments-icon" icon="comment-slash" />
-          </p>
-        )}
+            <p onClick={this.toggleComments}>
+              {' '}
+              Hide Comments <FontAwesomeIcon className="comments-icon" icon="comment-slash" />
+            </p>
+          )}
 
         {!this.state.hidden && (
           <div>
@@ -35,14 +35,15 @@ class Comments extends Component {
                   <div key={comment._id} className="comment-box">
                     <div className="user-info-comments">
                       <p className="username-comment">{comment.created_by.username} Says...</p>
-                      {/* <img
+                      <img
                         className="user-img-comment"
-                        src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2edd8416489cbfa510d9a3eed50ecb5e&auto=format&fit=crop&w=500&q=60"
+
+                        src={comment.created_by.avatar_url}
                         width="55"
                         height="55"
                         alt="Profile Avatar"
                         title={comment.created_by.username}
-                      /> */}
+                      />
                     </div>
                     <div className="comment-text">
                       <p>"{comment.body}"</p>
