@@ -6,7 +6,7 @@
     'img title title'
     'article-body article-body article-body'
     'votes votes comments';
-  margin-left: 1em;
+  margin-left: 1.5em;
   margin-top: 1em;
   margin-right: 1em;
   padding: 1em;
@@ -14,7 +14,7 @@
 }
 .articles-container {
   overflow: scroll;
-  height: 50em;
+  height: 100vh;
 }
 a {
   text-decoration: underline;
@@ -36,7 +36,7 @@ img {
 
 .title {
   padding-left: 0.2em;
-  font-size: 1em;
+  font-size: 1.5em;
   grid-area: title;
   text-decoration: none;
   color: black;
