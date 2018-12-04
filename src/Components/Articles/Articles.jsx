@@ -30,7 +30,7 @@ class Articles extends Component {
                 <Voting id={article._id} votes={article.votes} />
               </p>
               <p className="comments">
-                <Link to={`/articles/${article._id}`}>
+                <Link className="comments" to={`/articles/${article._id}`}>
                   {article.comment_count} <FontAwesomeIcon className="comments" icon="comments" />{' '}
                 </Link>
 

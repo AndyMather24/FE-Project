@@ -6,6 +6,9 @@
   height: 25em;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
+.comments-icon {
+  color: #0066CC;
+}
 .username-comment {
 margin-left: 1em;
 padding-left: 1em;
@@ -18,8 +21,9 @@ padding-left: 1em;
   grid-template-rows: auto auto;
   grid-template-areas: 'user-info user-info delete-bin' 'comment-text comment-text comment-text';
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border: solid lightblue 0.2em;
+  border: solid #1B2737 0.2em;
   margin-bottom: 1em;
+  background: #1B2737;
 
 }
 
@@ -42,6 +46,7 @@ padding-left: 1em;
 }
 .delete-bin {
   grid-area: delete-bin;
+  color: #0066CC;
 }
 .comment-text {
   font-size: 1em;

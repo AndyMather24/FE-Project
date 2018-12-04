@@ -1,3 +1,8 @@
 .App {
   text-align: center;
+  background-color: #151E29;
+  
+}
+p, h5, h1, h4 {
+  color: antiquewhite;
 }

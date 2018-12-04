@@ -11,6 +11,7 @@
   margin-right: 1em;
   padding: 1em;
   box-shadow: 0 7px 8px 0 rgba(0, 0, 0, 0.2);
+  background: #1B2737;
 }
 .articles-container {
   overflow: scroll;
@@ -20,10 +21,7 @@ a {
   text-decoration: underline;
   color: black
 }
-a:hover {
-  color: green;
-  
-}
+
 body {
   grid-area: article-body;
 }
@@ -57,6 +55,7 @@ img {
   font-size: 1em;
   grid-area: comments;
   text-decoration: none;
+  color: #0066CC;
   font-family: 'Open Sans', sans-serif;
 }
 

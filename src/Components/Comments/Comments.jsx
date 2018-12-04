@@ -46,9 +46,7 @@ class Comments extends Component {
                       />
                     </div>
                     <div className="comment-text">
-                      <p>"{comment.body}"</p>
-                      {console.log(comment._id)}
-                      {console.log(comment.votes)}
+                      <p>{comment.body}</p>
                       <Voting id={comment._id} votes={comment.votes} />
                     </div>
                     <div className="delete-bin">
