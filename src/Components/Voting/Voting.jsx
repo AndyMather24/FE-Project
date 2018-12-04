@@ -11,7 +11,6 @@ class Voting extends Component {
   };
 
   render() {
-    { console.log(this.props.votes) }
     return (
       <div className="votes-comment-section">
         {!this.state.up && <FontAwesomeIcon className="thumb-up" onClick={this.handleVoteUp} icon="thumbs-up" />}
@@ -29,12 +28,11 @@ class Voting extends Component {
       up: !this.state.up,
       down: false
     });
-    api.addVote('up', this.props.id || this.props.votes).then(data => {
+    api.addVote('up', this.props.id).then(data => {
       return data;
     });
   }
   handleVoteDown = e => {
-    console.log(this.props.votes)
     let voteAmount = 1
     if (this.state.down) voteAmount = 2
     this.setState({
@@ -42,7 +40,7 @@ class Voting extends Component {
       down: !this.state.down,
       up: false
     });
-    api.addVote('down', this.props.id || this.props.votes).then(data => {
+    api.addVote('down', this.props.id).then(data => {
       return data;
     });
   };
