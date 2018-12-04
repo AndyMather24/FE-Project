@@ -3,7 +3,7 @@ import * as api from '../../api.js';
 import './Articles.css';
 import Voting from '../Voting/Voting'
 import Loading from '../Loading/Loading.jsx';
-import { Link } from '@reach/router';
+import { Link, navigate } from '@reach/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class Articles extends Component {
@@ -27,7 +27,7 @@ class Articles extends Component {
               </Link>
               <p className="article-body" >{article.body}</p>
               <p className="votes">
-                <Voting article={article} />
+                <Voting id={article._id} votes={article.votes} />
               </p>
               <p className="comments">
                 <Link to={`/articles/${article._id}`}>
@@ -49,17 +49,18 @@ class Articles extends Component {
           articles
         });
       }).catch(error => {
-        this.props.navigate('/error')
+        navigate('/error')
       });
     } else {
       api
         .fetchArticles()
         .then(articles => {
+          console.log(articles)
           this.setState({
             articles
           });
         }).catch(error => {
-          this.props.navigate('/error')
+          navigate('/error')
         });
     }
   }

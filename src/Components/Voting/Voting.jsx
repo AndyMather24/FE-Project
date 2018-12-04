@@ -5,39 +5,42 @@ import '../Article/Article.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 class Voting extends Component {
   state = {
-    totalVotes: 0
+    voteMod: 0,
+    up: false,
+    down: false,
   };
 
   render() {
     return (
       <div className="votes-comment-section">
-        <FontAwesomeIcon className="thumb-up" onClick={this.handleVoteUp} icon="thumbs-up" />
-        <span className="total-votes"> {this.state.totalVotes} <FontAwesomeIcon className="heart" icon="heart" /> </span>
-        <FontAwesomeIcon className="thumb-down" onClick={this.handleVoteDown} icon="thumbs-down" />
+        {!this.state.up && <FontAwesomeIcon className="thumb-up" onClick={this.handleVoteUp} icon="thumbs-up" />}
+        <span className="total-votes"> {this.state.voteMod + this.props.votes} <FontAwesomeIcon className="heart" icon="heart" /> </span>
+        {!this.state.down && <FontAwesomeIcon className="thumb-down" onClick={this.handleVoteDown} icon="thumbs-down" />}
       </div>
     );
   }
 
-  componentDidMount = () => {
-    this.setState({
-      totalVotes: this.props.article.votes
-    });
-  };
-
   handleVoteUp = e => {
+    let voteUpAmount = 1;
+    if (this.state.down) voteUpAmount = 2;
     this.setState({
-      totalVotes: this.state.totalVotes + 1
+      totalVotes: voteUpAmount,
+      up: !this.state.up,
+      down: false
     });
-    api.addVote('up', this.props.article._id).then(data => {
+    api.addVote('up', this.props.id || this.props.votes).then(data => {
       return data;
     });
-  };
-
+  }
   handleVoteDown = e => {
+    let voteAmount = 1
+    if (this.state.up) voteAmount = 2
     this.setState({
-      totalVotes: this.state.totalVotes - 1
+      totalVotes: voteAmount,
+      down: !this.state.down,
+      up: false
     });
-    api.addVote('down', this.props.article._id).then(data => {
+    api.addVote('down', this.props.id || this.props.votes).then(data => {
       return data;
     });
   };

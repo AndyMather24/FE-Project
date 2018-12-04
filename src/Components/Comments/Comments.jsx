@@ -6,7 +6,7 @@ import '../Article/Article.css';
 import Postcomment from '../Postcomment/Postcomment';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Delete from '../Delete/Delete';
-
+import Voting from '../Voting/Voting'
 class Comments extends Component {
   state = {
     comments: [],
@@ -47,6 +47,7 @@ class Comments extends Component {
                     </div>
                     <div className="comment-text">
                       <p>"{comment.body}"</p>
+                      <Voting comments={this.state.comments} />
                     </div>
                     <div className="delete-bin">
                       {comment.created_by._id === this.props.user._id && (
