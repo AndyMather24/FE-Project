@@ -8,7 +8,7 @@ class Postarticle extends Component {
   };
   render() {
     return (
-      <div>
+      <div className='container'>
         <div className="Post-Art">
           <h1>Create Article</h1>
           <form onSubmit={this.handleSubmit}>

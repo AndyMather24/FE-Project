@@ -7,7 +7,7 @@
   grid-template-areas:
     'logo login-section'
     'logo nav';
-  border-bottom: 1px black solid;
+  border-bottom: 1px #1B2737 solid;
   background: #1B2737;
 }
 

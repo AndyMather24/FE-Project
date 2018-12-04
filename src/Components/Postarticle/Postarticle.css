@@ -1,17 +1,17 @@
 .Post-Art {
   font: 95% Arial, Helvetica, sans-serif;
-  width: auto;
+  width: 70%;
   margin: 10px auto;
   padding: 16px;
-
   box-shadow: 0 7px 8px 0 rgba(0, 0, 0, 0.2);
 }
+
 .Post-Art h1 {
   padding: 20px 0;
   font-size: 140%;
   font-weight: 300;
   text-align: center;
-  color: black;
+  color: white;
   margin: -16px -16px 16px -16px;
 }
 .Post-Art input[type='text'],
@@ -26,15 +26,18 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   width: 100%;
-  background: #fff;
+  background: #1B2737;
   margin-bottom: 4%;
-  border: 1px solid #ccc;
+  border: 1px solid #1B2737;
   padding: 3%;
-  color: #555;
+  color:white;
   font: 95% Arial, Helvetica, sans-serif;
 }
+.container {
+  height: 100vh;
+}
 .Post-Art textarea {
-  height: 5em;
+  height: 15em;
 }
 @media only screen and (max-width: 600px) {
   .Post-Art {
