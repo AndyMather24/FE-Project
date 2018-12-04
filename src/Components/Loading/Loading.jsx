@@ -1,10 +1,10 @@
 import React from 'react';
 import Loader from 'react-loader-spinner';
-
+import './Loading.css'
 const Loading = props => {
   return (
     <div className="loading">
-      <Loader type="Circles" color="#00BFFF" height="200" width="200" />
+      <Loader type="Oval" color="#0066CC" height={80} width={80} />
     </div>
   );
 };
