@@ -5,16 +5,17 @@ import '../Article/Article.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 class Voting extends Component {
   state = {
-    voteMod: 0,
+    voteMod: this.props.votes,
     up: false,
     down: false,
   };
 
   render() {
+    { console.log(this.props.votes) }
     return (
       <div className="votes-comment-section">
         {!this.state.up && <FontAwesomeIcon className="thumb-up" onClick={this.handleVoteUp} icon="thumbs-up" />}
-        <span className="total-votes"> {this.state.voteMod + this.props.votes} <FontAwesomeIcon className="heart" icon="heart" /> </span>
+        <span className="total-votes"> {this.state.voteMod} <FontAwesomeIcon className="heart" icon="heart" /> </span>
         {!this.state.down && <FontAwesomeIcon className="thumb-down" onClick={this.handleVoteDown} icon="thumbs-down" />}
       </div>
     );
@@ -22,9 +23,9 @@ class Voting extends Component {
 
   handleVoteUp = e => {
     let voteUpAmount = 1;
-    if (this.state.down) voteUpAmount = 2;
+    if (this.state.up) voteUpAmount = 2;
     this.setState({
-      totalVotes: voteUpAmount,
+      voteMod: this.props.votes + voteUpAmount,
       up: !this.state.up,
       down: false
     });
@@ -33,10 +34,11 @@ class Voting extends Component {
     });
   }
   handleVoteDown = e => {
+    console.log(this.props.votes)
     let voteAmount = 1
-    if (this.state.up) voteAmount = 2
+    if (this.state.down) voteAmount = 2
     this.setState({
-      totalVotes: voteAmount,
+      voteMod: this.props.votes - voteAmount,
       down: !this.state.down,
       up: false
     });

@@ -47,7 +47,9 @@ class Comments extends Component {
                     </div>
                     <div className="comment-text">
                       <p>"{comment.body}"</p>
-                      <Voting comments={this.state.comments} />
+                      {console.log(comment._id)}
+                      {console.log(comment.votes)}
+                      <Voting id={comment._id} votes={comment.votes} />
                     </div>
                     <div className="delete-bin">
                       {comment.created_by._id === this.props.user._id && (

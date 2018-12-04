@@ -38,10 +38,10 @@ class App extends Component {
         {this.state.loading && <Loading />}
         <Router primary={false}>
           <Home path="/" />
-          <Error default />
           <Articles path="/topics/:topic_slug/articles" />
           <Article path="/articles/:article_id" user={this.state.user} />
           <Postarticle user={this.state.user} path="/:user_id/post-article" />
+          <Error default />
         </Router>
       </div>
     );
