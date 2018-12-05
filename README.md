@@ -18,7 +18,7 @@ This project has allowed me to utilise a range of some of skills that I have lea
 
 
 ## Using NC News
-Using Heroku I have deployed my project which can be found on following link !!!!!!!!!!!!!!!!!!!. I have gone for clean & minimalist styling through out the application.
+Using Heroku I have deployed my project which can be found on following link: https://manyreads.netlify.com. 
 
 
 ## Functionality
