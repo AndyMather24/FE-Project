@@ -40,7 +40,8 @@
   grid-area: votes-comment-section;
 }
 .user-profile-picture {
-  border-radius: 100%;
+  border-radius: 50em;
+  object-fit: cover;
   margin: auto;
   grid-area: user-profile-picture;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);

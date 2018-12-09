@@ -11,6 +11,7 @@
   margin-right: 1em;
   padding: 1em;
   box-shadow: 0 7px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 3em;
   background: #1B2737;
 }
 .articles-container {
@@ -25,11 +26,14 @@ a {
 body {
   grid-area: article-body;
 }
-
+.article-info-container img {
+  border-radius: 3em;
+}
 img {
   grid-area: img;
   max-width: 100%;
   max-height: 100%;
+  
 }
 
 .title {
