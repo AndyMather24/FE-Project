@@ -26,15 +26,15 @@ class Articles extends Component {
                 <h5 >{article.title}</h5>
               </Link>
               <p className="article-body" >{article.body}</p>
-              <p className="votes">
+              <div className="votes">
                 <Voting id={article._id} votes={article.votes} />
-              </p>
-              <p className="comments">
+              </div>
+              <div className="comments">
                 <Link className="comments" to={`/articles/${article._id}`}>
                   {article.comment_count} <FontAwesomeIcon className="comments" icon="comments" />{' '}
                 </Link>
 
-              </p>
+              </div>
             </div>
           );
         })}
@@ -44,7 +44,6 @@ class Articles extends Component {
   componentDidMount = () => {
     if (this.props.topic_slug) {
       api.fetchArticlesByTopic(this.props.topic_slug).then(articles => {
-        console.log(articles)
         this.setState({
           articles
         });
