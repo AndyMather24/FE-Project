@@ -71,9 +71,12 @@
   .article-container {
     grid-template-rows: auto auto auto auto auto;
     height: 100vh;
-  
   }
   .article-title {
   font-size: 1.5em;
+  },
+  .user-profile-picture {
+    height: 3.5em;
+    width: 3.5em;
   }
 }
