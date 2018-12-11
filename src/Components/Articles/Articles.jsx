@@ -55,7 +55,6 @@ class Articles extends Component {
       api
         .fetchArticles()
         .then(articles => {
-          console.log(articles)
           this.setState({
             articles
           });
