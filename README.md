@@ -51,9 +51,9 @@ This component allows an authorised user to publish a new article.
 Bad route errors result in the relevant 400/404 page.
 API errors result in the API error status code and message being displayed to the user.
 
-## Installing a Local Copy
+## Running a Local Copy
 
-These instructions will help you to get a copy of Comic News up and running on your local machine for testing purposes.
+Follow these instructions to run a  a local copy on your local machine for testing purposes.
 
 ### Installing
 
